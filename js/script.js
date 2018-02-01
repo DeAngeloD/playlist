@@ -23,9 +23,9 @@
 
 // Data
 var mySong = {
-	"title": "Don't Worry Be Happy",
-	"artist": "Bobby McFerrin",
-	"imageURL": "https://images-na.ssl-images-amazon.com/images/I/51cB3PoKceL._AC_US500_FMwebp_QL65_.jpg",
+	"title": "God's Plan",
+	"artist": "Drake",
+	"imageURL": "http://s3.amazonaws.com/factmag-images/wp-content/uploads/2018/01/Drake-Scary-Hours-500x500.jpg",
 	"playURL": "https://open.spotify.com/track/4v52HuhZqVV0eNpP6vzH5I",
 
 }
@@ -65,7 +65,10 @@ $( document ).ready(function() {
 // displaySong uses the properties in the songObject to create an HTML element for a single song
 //	  and appends the element to the playlist on the page
 function displaySong(songObject){
-
+$("body").append("<div id = 'songinfo'></div>");
+$("#songinfo").append("<p>" + mySong.title + "</p>");
+$("#songinfo").append("<p>" + mySong.artist + "</p>");
+$("#songinfo").append("<img src = >" + mySong.imageURL + "</>");
 
 
 }
