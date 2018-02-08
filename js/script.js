@@ -57,7 +57,7 @@ var myPlayList = [
 // DOCUMENT READY FUNCTION
 $( document ).ready(function() {
 	// everything inside this function happens as soon as the page loads!
-
+displayList(myPlayList);
 
 
 });
@@ -66,17 +66,18 @@ $( document ).ready(function() {
 //	  and appends the element to the playlist on the page
 function displaySong(songObject){
 $("body").append("<div id = 'songinfo'></div>");
-$("#songinfo").append("<p>" + mySong.title + "</p>");
-$("#songinfo").append("<p>" + mySong.artist + "</p>");
-$("#songinfo").append("<img src = >" + mySong.imageURL + "</>");
-
+$("#songinfo").append("<p>" + songObject.title + "</p>");
+$("#songinfo").append("<p>" + songObject.artist + "</p>");
+$("#songinfo").append("<img src = >" + songObject.imageURL + "</>");
 
 }
 
 // displayList takes in an array of song objects, and it uses the information from each song object
 //    to create an HTML element and append it to the playlist on the page
 function displayList(songsArray){
-
+for (var i = 0; i < songsArray.length; i++){
+    displaySong(songsArray[i]);
+} 
 
 
 }
