@@ -57,27 +57,33 @@ var myPlayList = [
 // DOCUMENT READY FUNCTION
 $( document ).ready(function() {
 	// everything inside this function happens as soon as the page loads!
-displayList(myPlayList);
-
+	$("#button").click(function(){
+		$(".songs").empty();
+		
+		displayList(myPlayList);
+		
+	
+	});
 
 });
 
 // displaySong uses the properties in the songObject to create an HTML element for a single song
 //	  and appends the element to the playlist on the page
 function displaySong(songObject){
-$("body").append("<div id = 'songinfo'></div>");
+$(".songs").append("<div id ='songinfo' class ='card-body'>");
+$("#songinfo").append("<img src = " + songObject.imageURL + " class='song-image img-thumbnail float-right'></>");
 $("#songinfo").append("<p>" + songObject.title + "</p>");
 $("#songinfo").append("<p>" + songObject.artist + "</p>");
-$("#songinfo").append("<img src = >" + songObject.imageURL + "</>");
+$(".songs").append("</div>");
 
 }
 
 // displayList takes in an array of song objects, and it uses the information from each song object
 //    to create an HTML element and append it to the playlist on the page
 function displayList(songsArray){
-for (var i = 0; i < songsArray.length; i++){
-    displaySong(songsArray[i]);
-} 
+	for (var i = 0; i < songsArray.length; i++){
+	    displaySong(songsArray[i]);
+	} 
 
 
 }
@@ -92,7 +98,11 @@ function clearList(){
 // addSong takes inputs from the input boxes, organizes them into a new song object, and
 //    pushes a new song to the playlist array
 function addSong(){
+	var titleInput = $("#title").val();
+	var artistInput = $("#artist").val();
+	var song = {
+			"title": titleInput,
+			"artist": artistInput
 
-
-
+}
 }
